@@ -9,12 +9,12 @@ class QueenProblem:
 
     def populate(self):
         for i in range(self.queen_pieces_count):
-            a = randint(0, self.chk.chk_dimensions-1)
-            b = randint(0, self.chk.chk_dimensions-1)
-            if self.chk.chk[a][b] != None:
-                i -= 1
-                continue
-            else:
-                self.chk.chk[a][b] = Piece(p_type="Queen")
+            while True:
+                a = randint(0, self.chk.chk_dimensions-1)
+                b = randint(0, self.chk.chk_dimensions-1)
+                if self.chk.chk[a][b] == None:
+                    self.chk.chk[a][b] = Piece(p_type="Queen")
+                    break
+                
 
 
